@@ -12,7 +12,10 @@ dotenv.config();
 const app = express();
 const server = createServer(app);
 const io = new Server(server,{
-    connectionStateRecovery:{}
+    connectionStateRecovery:{},
+    cors: {
+        origin: "*"
+    }
 });
 
 const db = createClient({
